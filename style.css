@@ -1,0 +1,191 @@
+body {
+    background: radial-gradient(#ff0000, #060606);
+    background-repeat: no-repeat;
+    background-position: left;
+    height: 100vh;
+    display: flex;
+    
+  }
+  ::selection {
+    background: transparent;
+  }
+  svg {
+    cursor: pointer;
+  }
+
+  input[type="checkbox"],
+  #containerLeftBottom,
+  #detailsContainer,
+  #rdj {
+    display: none;
+    transition: 0.5s;
+  }
+
+  #titleContent,
+  #detailsContent {
+    stroke: #f1efc1;
+    fill: #f1efc1;
+    font-family: "Orbitron", sans-serif;
+    pointer-events: none;
+  }
+
+  /* The typing effect */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: orange;
+    }
+  }
+
+  #detailsContent {
+    color: hsl(0deg 0% 100%);
+    font-size: 20px;
+    font-family: "Orbitron";
+    letter-spacing: 2px;
+    text-align: justify;
+    /*     border-right: .15em solid orange;  */
+    margin: 0 auto;
+    animation: typing 0.5s steps(30, end), blink-caret 0.5s step-end;
+  }
+
+  #containerBox,
+  #containerRightBottom,
+  #loadingLights {
+    transition: 0.5s;
+  }
+
+  #fireCircles,
+  #innerCircle,
+  #outerCircle,
+  #middleCircle {
+    transition: 1s transform;
+    transform-origin: center;
+    transform-box: fill-box;
+    pointer-events: bounding-box;
+  }
+
+  input[type="checkbox"]:checked + svg #fireCircles #outerCircle {
+    transform: rotate(360deg);
+  }
+
+  input[type="checkbox"]:checked
+    + svg
+    #fireCircles
+    + #container
+    #containerLeftBottom {
+    display: block;
+  }
+
+  input[type="checkbox"]:checked + svg #detailsContainer {
+    display: block;
+  }
+
+  input[type="checkbox"]:checked + svg #rdj {
+    display: block;
+  }
+
+  input[type="checkbox"]:checked + svg #fireCircles #innerCircle {
+    transform: rotate(-120deg);
+  }
+
+  input[type="checkbox"]:checked
+    + svg
+    #fireCircles
+    + #container
+    #containerRightBottom {
+    transform: translate(0px, 164px);
+    transition: 0s;
+    position: relative;
+  }
+
+  input[type="checkbox"]:checked
+    + svg
+    #fireCircles
+    + #container
+    #containerBox {
+    d: path(
+      "M250,449.999998c19.64.515,28.781-.462,41.5-12l11.5-12c9.98-7.571,16.62-9.831,30.5-10h127.5c11.484-.409,17.715,1.899,28.5,10l13,12c9.098,9.05,15.207,11.924,27.5,14h327.5v0l62.5-2c11.148-3.896,20.243-6.824,28.5-14l72.5-72.5c5.15-7.217,7.68-11.513,11-20L1032.5,108h2v-41h-1.5v-25.25-25.25c.04-9.12834-2.76-12.34415-13-14.5h-53-793.5l-7.529-.63164C227.189,8.8461,272.536,56.6375,285,116.5l-2.75.5c12.64,101.955-49.038,162.651-139.75,166c0,0,0,.500001,0,.500001v-2.000001C72.263372,288.877571,9.87479,229.139162,5.49988,172.499999v279.499999l189.50012-2h55"
+    );
+  }
+
+  input[type="checkbox"]:checked
+    + svg
+    #fireCircles
+    + #container
+    #loadingLights {
+    transform: translate(0px, 169px);
+    transition: 0.5s;
+    position: relative;
+  }
+
+  input[type="checkbox"]:checked + svg #fireCircles #middleCircle {
+    transform: rotate(250deg);
+    transition: 0.5s;
+  }
+
+  input[type="checkbox"]:checked
+    + svg
+    #fireCircles
+    + #container
+    #firstLight {
+    fill: rgb(4 232 204);
+    transition: 0.2s;
+    transition-delay: 0s;
+    transform-origin: left;
+  }
+
+  input[type="checkbox"]:checked
+    + svg
+    #fireCircles
+    + #container
+    #secondLight {
+    fill: rgb(97 208 255);
+    transition: 0.2s;
+    transition-delay: 0.2s;
+    transform-origin: left;
+  }
+
+  input[type="checkbox"]:checked
+    + svg
+    #fireCircles
+    + #container
+    #thirdLight {
+    fill: rgb(224 228 86);
+    transition: 0.2s;
+    transition-delay: 0.4s;
+    transform-origin: left;
+  }
+
+  #firstLight {
+    fill: rgb(47 179 163);
+    transition: 0.2s fill;
+    transition-delay: 0.4s;
+    transform-origin: right;
+  }
+
+  #secondLight {
+    fill: rgb(20 174 224);
+    transition: 0.2s fill;
+    transition-delay: 0.2s;
+    transform-origin: right;
+  }
+
+  #thirdLight {
+    transition: 0.2s fill;
+    transition-delay: 0s;
+    transform-origin: right;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Sarpanch&display=swap');
